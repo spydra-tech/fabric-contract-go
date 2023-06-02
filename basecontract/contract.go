@@ -1,4 +1,4 @@
-package basecontract
+package spydracontract
 
 import (
 	"encoding/json"
@@ -8,7 +8,7 @@ import (
 )
 
 // BaseContract defines the utility functions that are provided by the Spydra base smart contract for Hyperledger Fabric.
-type SpydraContract struct {
+type BaseContract struct {
 	contractapi.Contract
 }
 
@@ -21,7 +21,7 @@ type PaginatedQueryResult struct {
 
 // ReadDataFromQueryString executes a Couch DB rich query and provides paginated response.
 // The function accepts a Couch DB rich query string, the page size for the results and a bookmark.
-func (contract *SpydraContract) ReadDataFromQueryString(ctx contractapi.TransactionContextInterface, queryString string, pageSize int32, bookmark string) (response *PaginatedQueryResult, err error) {
+func (contract *BaseContract) ReadDataFromQueryString(ctx contractapi.TransactionContextInterface, queryString string, pageSize int32, bookmark string) (response *PaginatedQueryResult, err error) {
 	logger := flogging.MustGetLogger("BaseContract")
 	stub := ctx.GetStub()
 

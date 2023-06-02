@@ -9,12 +9,12 @@ The Spydra Hyperledger Fabric Base Contract has various utility methods which pr
 ## Quick Start
 1. Run `go get`.
     ```sh
-    $ go get -u github.com/spydra-tech/fabric-contract-go/basecontract
+    $ go get -u github.com/spydra-tech/fabric-contract-go/spydracontract
     ```
 2. Extend your Smart Contract from the Spydra Base Contract.
     ```go
     type MyCustomContract struct {
-	    basecontract.SpydraContract
+	    spydracontract.BaseContract
     }
     ```
 3. [Deploy](https://docs.spydra.app/how-to/apps/deploy-app) the Chaincode on a Spydra Blockchain network and start querying on any attribute using [Graph QL](https://docs.spydra.app/products-overview/graphql).

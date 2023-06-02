@@ -1,4 +1,4 @@
-module bitbucket.org/sypdra/common-contract-go
+module github.com/spydra-tech/fabric-contract-go
 
 go 1.18
 
