@@ -1,0 +1,10 @@
+# Emacs backup files
+*~
+*#
+.#*
+# Vim file artifacts
+.*.sw*
+# omit Go vendor directories
+vendor/
+.vscode
+asset-contract
