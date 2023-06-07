@@ -14,7 +14,7 @@ type BaseContract struct {
 
 // PaginatedQueryResult is a type that holds the various attributes that will be returned in the response to a query.
 type PaginatedQueryResult struct {
-	Count    int32       `json:"count,omitempty" metadata:",optional"`
+	Count    int32       `json:"count"`
 	Bookmark string      `json:"bookmark,omitempty" metadata:",optional"`
 	Records  interface{} `json:"records"`
 }
@@ -25,7 +25,7 @@ func (contract *BaseContract) ReadDataFromQueryString(ctx contractapi.Transactio
 	logger := flogging.MustGetLogger("BaseContract")
 	stub := ctx.GetStub()
 
-	var queryData []interface{}
+	queryData := []interface{}{}
 
 	queryIterator, queryMetadata, err := stub.GetQueryResultWithPagination(queryString, pageSize, bookmark)
 	if err != nil {
